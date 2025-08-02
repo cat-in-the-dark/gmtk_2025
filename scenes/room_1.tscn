@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://djog75ckri4ev"]
 
 [ext_resource type="TileSet" uid="uid://c8vski4h0kigc" path="res://assets/tileset.tres" id="1_3t5sg"]
-[ext_resource type="Script" uid="uid://bthgrsqg6rsm4" path="res://scenes/room.gd" id="1_8oql1"]
+[ext_resource type="Script" uid="uid://bthgrsqg6rsm4" path="res://scripts/room.gd" id="1_8oql1"]
 [ext_resource type="PackedScene" uid="uid://clmk2mwyptn4n" path="res://scenes/note.tscn" id="2_vu5en"]
 [ext_resource type="LabelSettings" uid="uid://dt4yfk6wtlu3k" path="res://assets/font_label_settings.tres" id="4_irjyx"]
 [ext_resource type="PackedScene" uid="uid://2or3jkig6xa2" path="res://scenes/tile_part_exit.tscn" id="4_xhekj"]

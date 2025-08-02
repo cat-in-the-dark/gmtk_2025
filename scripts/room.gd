@@ -41,6 +41,7 @@ func move_transition_room():
 	
 func move_game_rooms():
 	if is_notes_callected():
+		# TODO load level2
 		return
 	for tile in game_tiles:
 		tile.position.x = tile.position.x + level_size

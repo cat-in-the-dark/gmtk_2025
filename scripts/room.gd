@@ -4,6 +4,7 @@ class_name Room
 const TILEMAP_CELL_SIZE = 8
 var level_size = 0
 
+@export var next_level_prefab: PackedScene
 @export var n_notes: int
 var n_collected_notes: int = 0
 
@@ -18,30 +19,36 @@ func _ready():
 	for tilemap in game_tiles:
 		level_size += tilemap.get_used_rect().size.x * TILEMAP_CELL_SIZE
 	level_size += trans_tiles.get_used_rect().size.x * TILEMAP_CELL_SIZE
-	print(level_size)
-	
-	#for child in get_children():
-		#print(child)
-		#if child is Note:
-			#n_notes += 1
-	#print("Notes in level: ", n_notes)
 
 func collect_note():
 	n_collected_notes += 1
-	if is_notes_callected():
-		print("Level is done")
 
 func is_notes_callected():
 	return n_collected_notes >= n_notes
 
 func move_transition_room():
 	if is_notes_callected():
+		queue_free()
 		return
 	trans_tiles.position.x = trans_tiles.position.x + level_size
 	
+func spawn_next_room():
+	print("spawn next room ", next_level_prefab)
+	var next_level = next_level_prefab.instantiate()
+	next_level.global_position = trans_tiles.global_position
+	next_level.global_position.x += trans_tiles.get_used_rect().size.x * TILEMAP_CELL_SIZE
+	get_tree().root.add_child(next_level)
+	
+func show_win_screen():
+	# TODO: go to win screen
+	get_tree().change_scene_to_file("res://scenes/game_scene.tscn")
+	
 func move_game_rooms():
 	if is_notes_callected():
-		# TODO load level2
+		if next_level_prefab:
+			call_deferred("spawn_next_room")
+		else:
+			call_deferred("show_win_screen")
 		return
 	for tile in game_tiles:
 		tile.position.x = tile.position.x + level_size

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED = 96.0
+const SPEED = 72.0
 const JUMP_VELOCITY = -300.0
 const CIRCLE_LEN = PI * 16
 

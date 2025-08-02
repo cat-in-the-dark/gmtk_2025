@@ -30,3 +30,8 @@ func _physics_process(delta):
 		sprite.rotate(-1 * velocity.x / 16.0)
 
 	move_and_slide()
+
+
+func _on_damage_hit_area_body_entered(body):
+	# Collide with spike
+	print(body)

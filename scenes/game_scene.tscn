@@ -1,20 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq1agxpbja1mi"]
+[gd_scene load_steps=6 format=3 uid="uid://bq1agxpbja1mi"]
 
 [ext_resource type="PackedScene" uid="uid://clknudq3r3qcn" path="res://scenes/player.tscn" id="1_mlf6e"]
 [ext_resource type="PackedScene" uid="uid://djog75ckri4ev" path="res://scenes/room_1.tscn" id="2_po0ka"]
 [ext_resource type="Script" uid="uid://bcht5gnqqkt3n" path="res://scripts/killzone.gd" id="3_v1wow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycayy"]
+size = Vector2(1024, 319)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_po0ka"]
 
 [node name="game_scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_mlf6e")]
-position = Vector2(27, 136)
+position = Vector2(10, 136)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(110, 0)
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="RightEdge" type="Area2D" parent="Player/Camera2D"]
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Camera2D/RightEdge"]
+position = Vector2(-1, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ycayy")
 
 [node name="Room_1" parent="." instance=ExtResource("2_po0ka")]
 

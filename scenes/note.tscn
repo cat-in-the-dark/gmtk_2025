@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cdidsto3xko3i" path="res://assets/note.png" id="1_t3yvt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3yvt"]
-size = Vector2(6, 7)
+size = Vector2(12, 15)
 
 [node name="Note" type="Node2D"]
 script = ExtResource("1_1bnk6")

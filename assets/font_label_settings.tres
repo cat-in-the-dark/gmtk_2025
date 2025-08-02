@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dt4yfk6wtlu3k"]
+
+[ext_resource type="FontFile" uid="uid://bubj31t1qxn52" path="res://assets/Super Mario Bros. NES.ttf" id="1_mwy5r"]
+
+[resource]
+font = ExtResource("1_mwy5r")
+font_size = 8

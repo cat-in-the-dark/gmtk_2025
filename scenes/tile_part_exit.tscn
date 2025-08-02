@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dyjxrwuxn3ddh" path="res://scenes/tile_part_exit.gd" id="1_42pwc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8oql1"]
-size = Vector2(16, 16)
+size = Vector2(8, 8)
 
 [node name="Exit" type="Area2D"]
 collision_layer = 32768
@@ -11,6 +11,7 @@ collision_mask = 32768
 script = ExtResource("1_42pwc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_8oql1")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bq1agxpbja1mi"]
 
 [ext_resource type="PackedScene" uid="uid://clknudq3r3qcn" path="res://scenes/player.tscn" id="1_mlf6e"]
-[ext_resource type="PackedScene" uid="uid://djog75ckri4ev" path="res://scenes/room_1.tscn" id="2_po0ka"]
+[ext_resource type="PackedScene" uid="uid://d0wombqlmqfp6" path="res://scenes/room_2.tscn" id="3_bw6k5"]
 [ext_resource type="Script" uid="uid://bcht5gnqqkt3n" path="res://scripts/killzone.gd" id="3_v1wow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycayy"]
@@ -28,7 +28,7 @@ position = Vector2(-1, 0)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ycayy")
 
-[node name="Room_1" parent="." instance=ExtResource("2_po0ka")]
+[node name="Room_2" parent="." instance=ExtResource("3_bw6k5")]
 
 [node name="Killzone" type="Area2D" parent="."]
 position = Vector2(0, 320)

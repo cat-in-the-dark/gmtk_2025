@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://djog75ckri4ev"]
+[gd_scene load_steps=3 format=4 uid="uid://djog75ckri4ev"]
 
 [ext_resource type="TileSet" uid="uid://c8vski4h0kigc" path="res://assets/tileset.tres" id="1_3t5sg"]
+[ext_resource type="PackedScene" uid="uid://clmk2mwyptn4n" path="res://scenes/note.tscn" id="2_vu5en"]
 
 [node name="Room_1" type="Node2D"]
 
@@ -8,3 +9,9 @@
 position = Vector2(0, 180)
 tile_map_data = PackedByteArray("AAAAAPz/AQAAAAAAAAABAPz/AQAAAAAAAAACAPz/AQAAAAAAAAADAPz/AQAAAAAAAAAEAPz/AQAAAAAAAAAFAPz/AQAAAAAAAAAGAPz/AQAAAAAAAAAHAPz/AQAAAAAAAAAIAPz/AQAAAAAAAAAJAPz/AQAAAAAAAAAKAPz/AQAAAAAAAAALAPz/AQAAAAAAAAAMAPz/AQAAAAAAAAANAPz/AQAAAAAAAAAOAPz/AQAAAAAAAAAPAPz/AQAAAAAAAAAQAPz/AQAAAAAAAAARAPz/AQAAAAAAAAASAPz/AQAAAAAAAAATAPz/AQAAAAAAAAAUAPz/AQAAAAAAAAAVAPz/AQAAAAAAAAAWAPz/AQAAAAAAAAAXAPz/AQAAAAAAAAAYAPz/AQAAAAAAAAAZAPz/AQAAAAAAAAAaAPz/AQAAAAAAAAAbAPz/AQAAAAAAAAAcAPz/AQAAAAAAAAAdAPz/AQAAAAAAAAAeAPz/AQAAAAAAAAAfAPz/AQAAAAAAAAAgAPz/AQAAAAAAAAAhAPz/AQAAAAAAAAAiAPz/AQAAAAAAAAAjAPz/AQAAAAAAAAAkAPz/AQAAAAAAAAAlAPz/AQAAAAAAAAAmAPz/AQAAAAAAAAAnAPz/AQAAAAAAAAAoAPz/AQAAAAAAAAAHAPv/AgAAAAAAAAAIAPv/AgAAAAAAAAAJAPv/AgAAAAAAAAA=")
 tile_set = ExtResource("1_3t5sg")
+
+[node name="Note" parent="." instance=ExtResource("2_vu5en")]
+position = Vector2(45, 142)
+
+[node name="Note2" parent="." instance=ExtResource("2_vu5en")]
+position = Vector2(187, 85)

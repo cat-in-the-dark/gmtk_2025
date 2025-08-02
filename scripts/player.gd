@@ -32,6 +32,9 @@ func _physics_process(delta):
 	move_and_slide()
 
 
+func collect_note():
+	print("Collect note")
+
 func _on_damage_hit_area_body_entered(body):
 	# Collide with spike
 	print(body)

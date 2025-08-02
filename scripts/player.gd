@@ -35,11 +35,11 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	# Animate sprite
-	if velocity.x > 0.01 or velocity.x < -0.01:
-		sprite.rotate(-1 * velocity.x / 16.0)
-
 	move_and_slide()
+
+	# Animate sprite
+	var vx = get_position_delta().x
+	sprite.rotate(vx / 16.0)
 
 
 func collect_note():

@@ -14,13 +14,14 @@ size = Vector2(1024, 319)
 [node name="game_scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_mlf6e")]
-position = Vector2(10, -48)
+position = Vector2(10, -45)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(110, -42)
+position = Vector2(110, -26)
 position_smoothing_speed = 8.0
 
 [node name="RightEdge" type="Area2D" parent="Player/Camera2D"]
+visible = false
 collision_layer = 32768
 collision_mask = 32768
 

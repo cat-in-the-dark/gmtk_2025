@@ -41,12 +41,12 @@ func on_level_looped():
 
 func move_transition_room():
 	if is_notes_callected():
-		bgm_player.on_room_note_collected(n_notes, 0)
 		queue_free()
 		return
 	trans_tiles.position.x = trans_tiles.position.x + level_size
 	
 func spawn_next_room():
+	bgm_player.on_room_note_collected(n_notes, 0)
 	print("spawn next room ", next_level_prefab)
 	var next_level = next_level_prefab.instantiate()
 	next_level.global_position = trans_tiles.global_position

@@ -55,7 +55,7 @@ func spawn_next_room():
 	
 func show_win_screen():
 	# TODO: go to win screen
-	get_tree().change_scene_to_file("res://scenes/game_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/game_win.tscn")
 	
 func move_game_rooms():
 	if is_notes_callected():

@@ -6,7 +6,7 @@ var level_size = 0
 
 @export var player_spawn_point: Node2D
 @export var next_level_prefab: PackedScene
-@export var n_notes: int
+var n_notes: int # Auto set by note itself
 var n_collected_notes: int = 0
 
 signal level_looped(n_loops)

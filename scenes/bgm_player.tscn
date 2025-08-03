@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://de08ymgyhd2im"]
+[gd_scene load_steps=8 format=3 uid="uid://de08ymgyhd2im"]
 
 [ext_resource type="AudioStream" uid="uid://dvredh3vj2nit" path="res://assets/01.ogg" id="1_wk4np"]
 [ext_resource type="AudioStream" uid="uid://bit06fop6icd4" path="res://assets/02.ogg" id="2_tlpki"]
 [ext_resource type="AudioStream" uid="uid://bxijsc3xigv5t" path="res://assets/03.ogg" id="3_annk1"]
 [ext_resource type="Script" uid="uid://c1mfprj5uy0wv" path="res://scripts/bgm_player.gd" id="4_annk1"]
+[ext_resource type="AudioStream" uid="uid://cu38ydn1761vd" path="res://assets/04.ogg" id="4_gs5a3"]
+[ext_resource type="AudioStream" uid="uid://cl76b6dea1kke" path="res://assets/05.ogg" id="5_j6opp"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_nm08u"]
-clip_count = 3
+clip_count = 5
 clip_0/name = &"01"
 clip_0/stream = ExtResource("1_wk4np")
 clip_0/auto_advance = 0
@@ -16,6 +18,12 @@ clip_1/auto_advance = 0
 clip_2/name = &"03"
 clip_2/stream = ExtResource("3_annk1")
 clip_2/auto_advance = 0
+clip_3/name = &"04"
+clip_3/stream = ExtResource("4_gs5a3")
+clip_3/auto_advance = 0
+clip_4/name = &"05"
+clip_4/stream = ExtResource("5_j6opp")
+clip_4/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 2.0,

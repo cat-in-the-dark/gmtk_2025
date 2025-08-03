@@ -6,6 +6,8 @@ signal note_collected(n_notes: int, n_collected_notes: int)
 const TILEMAP_CELL_SIZE = 8
 var level_size = 0
 
+@export var player_spawn_point: Node2D
+@export var player: Player
 @export var next_level_prefab: PackedScene
 @export var n_notes: int
 var n_collected_notes: int = 0
@@ -16,8 +18,8 @@ var loops = 0
 # Parts contains 3 elements of the level so we can loop them 
 # until player gathers all Notes.
 # The last part must be always one without notes.
-@onready var game_tiles: Array[TileMapLayer] = [$Parts/Tiles1, $Parts/Tiles2]
-@onready var trans_tiles: TileMapLayer = $Parts/Transition
+@onready var game_tiles: Array[TileMapLayer] = [$Tiles1, $Tiles2]
+@onready var trans_tiles: TileMapLayer = $Transition
 
 
 func _ready():
@@ -48,6 +50,8 @@ func spawn_next_room():
 	var next_level = next_level_prefab.instantiate()
 	next_level.global_position = trans_tiles.global_position
 	next_level.global_position.x += trans_tiles.get_used_rect().size.x * TILEMAP_CELL_SIZE
+	next_level.player = player
+	player.room = next_level
 	get_tree().root.add_child(next_level)
 	
 func show_win_screen():

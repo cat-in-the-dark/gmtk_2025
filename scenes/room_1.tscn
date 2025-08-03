@@ -8,26 +8,28 @@
 [ext_resource type="PackedScene" uid="uid://2or3jkig6xa2" path="res://scenes/tile_part_exit.tscn" id="4_xhekj"]
 [ext_resource type="Script" uid="uid://cquu7cjvwruw4" path="res://scripts/loop_reactor.gd" id="6_d0u7m"]
 
-[node name="Room" type="Node2D"]
+[node name="Room" type="Node2D" node_paths=PackedStringArray("player_spawn_point")]
 script = ExtResource("1_8oql1")
+player_spawn_point = NodePath("Tiles1/player_spawn_point")
 next_level_prefab = ExtResource("2_0akh5")
 n_notes = 3
 
-[node name="Parts" type="Node2D" parent="."]
-
-[node name="Tiles1" type="TileMapLayer" parent="Parts"]
+[node name="Tiles1" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("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")
 tile_set = ExtResource("1_3t5sg")
 
-[node name="Note" parent="Parts/Tiles1" node_paths=PackedStringArray("room") instance=ExtResource("2_vu5en")]
+[node name="player_spawn_point" type="Node2D" parent="Tiles1"]
+position = Vector2(22, -55)
+
+[node name="Note" parent="Tiles1" node_paths=PackedStringArray("room") instance=ExtResource("2_vu5en")]
 position = Vector2(448, -84)
-room = NodePath("../../..")
+room = NodePath("../..")
 
-[node name="Note2" parent="Parts/Tiles1" node_paths=PackedStringArray("room") instance=ExtResource("2_vu5en")]
+[node name="Note2" parent="Tiles1" node_paths=PackedStringArray("room") instance=ExtResource("2_vu5en")]
 position = Vector2(733, -77)
-room = NodePath("../../..")
+room = NodePath("../..")
 
-[node name="Label2" type="Label" parent="Parts/Tiles1"]
+[node name="Label2" type="Label" parent="Tiles1"]
 offset_left = 194.0
 offset_top = -120.0
 offset_right = 306.0
@@ -36,7 +38,7 @@ text = "SPACE
 to jump"
 label_settings = ExtResource("4_irjyx")
 
-[node name="space_to_start" type="Label" parent="Parts/Tiles1"]
+[node name="space_to_start" type="Label" parent="Tiles1"]
 offset_left = 9.0
 offset_top = -97.0
 offset_right = 113.0
@@ -46,7 +48,7 @@ to start"
 label_settings = ExtResource("4_irjyx")
 script = ExtResource("6_d0u7m")
 
-[node name="Label3" type="Label" parent="Parts/Tiles1"]
+[node name="Label3" type="Label" parent="Tiles1"]
 offset_left = 386.0
 offset_top = -117.0
 offset_right = 490.0
@@ -54,7 +56,7 @@ offset_bottom = -96.0
 text = "Gather notes"
 label_settings = ExtResource("4_irjyx")
 
-[node name="if_loop" type="Label" parent="Parts/Tiles1"]
+[node name="if_loop" type="Label" parent="Tiles1"]
 visible = false
 offset_left = 8.0
 offset_top = -96.0
@@ -65,25 +67,25 @@ TO FIND ALL THE NOTES"
 label_settings = ExtResource("4_irjyx")
 script = ExtResource("6_d0u7m")
 
-[node name="Tiles2" type="TileMapLayer" parent="Parts"]
+[node name="Tiles2" type="TileMapLayer" parent="."]
 position = Vector2(768, 0)
 tile_map_data = PackedByteArray("AAAAAPz/AQAAAAAAAAABAPz/AQAAAAAAAAACAPz/AQAAAAAAAAADAPz/AQAAAAAAAAAEAPz/AQAAAAAAAAAFAPz/AQAAAAAAAAAGAPz/AQAAAAAAAAAHAPz/AQAAAAAAAAAIAPz/AQAAAAAAAAAJAPz/AQAAAAAAAAAKAPz/AQAAAAAAAAALAPz/AQAAAAAAAAAMAPz/AQAAAAAAAAANAPz/AQAAAAAAAAAOAPz/AQAAAAAAAAAPAPz/AQAAAAAAAAAQAPz/AQAAAAAAAAARAPz/AQAAAAAAAAASAPz/AQAAAAAAAAATAPz/AQAAAAAAAAAUAPz/AQAAAAAAAAAVAPz/AQAAAAAAAAAWAPz/AQAAAAAAAAAXAPz/AQAAAAAAAAAYAPz/AQAAAAAAAAAZAPz/AQAAAAAAAAAaAPz/AQAAAAAAAAAbAPz/AQAAAAAAAAAcAPz/AQAAAAAAAAAdAPz/AQAAAAAAAAAeAPz/AQAAAAAAAAAfAPz/AQAAAAAAAAAgAPz/AQAAAAAAAAAhAPz/AQAAAAAAAAAiAPz/AQAAAAAAAAAjAPz/AQAAAAAAAAAkAPz/AQAAAAAAAAAlAPz/AQAAAAAAAAAmAPz/AQAAAAAAAAAnAPz/AQAAAAAAAAAoAPz/AQAAAAAAAAAQAPn/AQAAAAAAAAAPAPn/AQAAAAAAAAAPAPr/AQAAAAAAAAAPAPv/AQAAAAAAAAAQAPv/AQAAAAAAAAAQAPr/AQAAAAAAAAATAPf/AQAAAAAAAAATAPj/AQAAAAAAAAATAPn/AQAAAAAAAAATAPr/AQAAAAAAAAATAPv/AQAAAAAAAAAUAPf/AQAAAAAAAAAUAPj/AQAAAAAAAAAUAPn/AQAAAAAAAAAUAPr/AQAAAAAAAAAUAPv/AQAAAAAAAAAXAPX/AQAAAAAAAAAXAPb/AQAAAAAAAAAXAPf/AQAAAAAAAAAXAPj/AQAAAAAAAAAXAPn/AQAAAAAAAAAXAPr/AQAAAAAAAAAXAPv/AQAAAAAAAAAYAPv/AQAAAAAAAAAYAPr/AQAAAAAAAAAYAPn/AQAAAAAAAAAYAPj/AQAAAAAAAAAYAPf/AQAAAAAAAAAYAPb/AQAAAAAAAAAYAPX/AQAAAAAAAAARAPv/AgAAAAAAAAASAPv/AgAAAAAAAAAZAPv/AgAAAAAAAAAaAPv/AgAAAAAAAAAbAPv/AgAAAAAAAAAcAPv/AgAAAAAAAAAVAPv/AQAAAAAAAAAWAPv/AQAAAAAAAAAWAPr/AQAAAAAAAAAVAPr/AQAAAAAAAAAVAPn/AgAAAAAAAAAWAPn/AgAAAAAAAAA=")
 tile_set = ExtResource("1_3t5sg")
 
-[node name="Note3" parent="Parts/Tiles2" node_paths=PackedStringArray("room") instance=ExtResource("2_vu5en")]
+[node name="Note3" parent="Tiles2" node_paths=PackedStringArray("room") instance=ExtResource("2_vu5en")]
 position = Vector2(226, -120)
-room = NodePath("../../..")
+room = NodePath("../..")
 
-[node name="Transition" type="TileMapLayer" parent="Parts"]
+[node name="Transition" type="TileMapLayer" parent="."]
 position = Vector2(1096, 0)
 tile_map_data = PackedByteArray("AAAAAPz/AQAAAAAAAAABAPz/AQAAAAAAAAACAPz/AQAAAAAAAAADAPz/AQAAAAAAAAAEAPz/AQAAAAAAAAAFAPz/AQAAAAAAAAAGAPz/AQAAAAAAAAAHAPz/AQAAAAAAAAAIAPz/AQAAAAAAAAAJAPz/AQAAAAAAAAAKAPz/AQAAAAAAAAALAPz/AQAAAAAAAAAMAPz/AQAAAAAAAAANAPz/AQAAAAAAAAAOAPz/AQAAAAAAAAAPAPz/AQAAAAAAAAAQAPz/AQAAAAAAAAARAPz/AQAAAAAAAAASAPz/AQAAAAAAAAATAPz/AQAAAAAAAAAUAPz/AQAAAAAAAAAVAPz/AQAAAAAAAAAWAPz/AQAAAAAAAAAXAPz/AQAAAAAAAAAYAPz/AQAAAAAAAAAZAPz/AQAAAAAAAAAaAPz/AQAAAAAAAAAbAPz/AQAAAAAAAAAcAPz/AQAAAAAAAAAdAPz/AQAAAAAAAAAeAPz/AQAAAAAAAAAfAPz/AQAAAAAAAAAgAPz/AQAAAAAAAAAhAPz/AQAAAAAAAAAiAPz/AQAAAAAAAAAjAPz/AQAAAAAAAAAkAPz/AQAAAAAAAAAlAPz/AQAAAAAAAAAmAPz/AQAAAAAAAAAnAPz/AQAAAAAAAAAoAPz/AQAAAAAAAAApAPz/AQAAAAAAAAA=")
 tile_set = ExtResource("1_3t5sg")
 
-[node name="Exit" parent="Parts/Transition" node_paths=PackedStringArray("room") instance=ExtResource("4_xhekj")]
+[node name="Exit" parent="Transition" node_paths=PackedStringArray("room") instance=ExtResource("4_xhekj")]
 position = Vector2(328, -24)
-room = NodePath("../../..")
+room = NodePath("../..")
 
-[node name="Label3" type="Label" parent="Parts/Transition"]
+[node name="Label3" type="Label" parent="Transition"]
 offset_left = -14.0
 offset_top = -137.0
 offset_right = 90.0
@@ -91,7 +93,7 @@ offset_bottom = -116.0
 text = "ヾ(´〇`)ﾉ♪♪♪"
 label_settings = ExtResource("4_irjyx")
 
-[node name="Label4" type="Label" parent="Parts/Transition"]
+[node name="Label4" type="Label" parent="Transition"]
 offset_left = 118.0
 offset_top = -90.0
 offset_right = 222.0
@@ -99,5 +101,5 @@ offset_bottom = -69.0
 text = "〜(￣▽￣〜)"
 label_settings = ExtResource("4_irjyx")
 
-[connection signal="level_looped" from="." to="Parts/Tiles1/space_to_start" method="destroy"]
-[connection signal="level_looped" from="." to="Parts/Tiles1/if_loop" method="make_visible"]
+[connection signal="level_looped" from="." to="Tiles1/space_to_start" method="destroy"]
+[connection signal="level_looped" from="." to="Tiles1/if_loop" method="make_visible"]

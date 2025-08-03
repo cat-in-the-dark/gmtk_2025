@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://de08ymgyhd2im"]
+
+[ext_resource type="AudioStream" uid="uid://dvredh3vj2nit" path="res://assets/01.ogg" id="1_wk4np"]
+[ext_resource type="AudioStream" uid="uid://bit06fop6icd4" path="res://assets/02.ogg" id="2_tlpki"]
+[ext_resource type="AudioStream" uid="uid://bxijsc3xigv5t" path="res://assets/03.ogg" id="3_annk1"]
+[ext_resource type="Script" uid="uid://c1mfprj5uy0wv" path="res://scripts/bgm_player.gd" id="4_annk1"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_nm08u"]
+clip_count = 3
+clip_0/name = &"01"
+clip_0/stream = ExtResource("1_wk4np")
+clip_0/auto_advance = 0
+clip_1/name = &"02"
+clip_1/stream = ExtResource("2_tlpki")
+clip_1/auto_advance = 0
+clip_2/name = &"03"
+clip_2/stream = ExtResource("3_annk1")
+clip_2/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 2.0,
+"fade_mode": 4,
+"from_time": 2,
+"hold_previous": true,
+"to_time": 0
+}
+}
+
+[node name="BgmPlayer" type="AudioStreamPlayer"]
+stream = SubResource("AudioStreamInteractive_nm08u")
+autoplay = true
+script = ExtResource("4_annk1")

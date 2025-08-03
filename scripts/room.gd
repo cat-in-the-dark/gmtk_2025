@@ -1,6 +1,8 @@
 extends Node2D
 class_name Room
 
+signal note_collected(n_notes: int, n_collected_notes: int)
+
 const TILEMAP_CELL_SIZE = 8
 var level_size = 0
 
@@ -25,6 +27,7 @@ func _ready():
 
 func collect_note():
 	n_collected_notes += 1
+	note_collected.emit(n_notes, n_collected_notes)
 
 func is_notes_callected():
 	return n_collected_notes >= n_notes

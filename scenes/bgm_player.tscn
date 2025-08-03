@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://de08ymgyhd2im"]
+[gd_scene load_steps=21 format=3 uid="uid://de08ymgyhd2im"]
 
 [ext_resource type="AudioStream" uid="uid://dvredh3vj2nit" path="res://assets/01.ogg" id="1_wk4np"]
 [ext_resource type="AudioStream" uid="uid://bit06fop6icd4" path="res://assets/02.ogg" id="2_tlpki"]
@@ -6,6 +6,18 @@
 [ext_resource type="Script" uid="uid://c1mfprj5uy0wv" path="res://scripts/bgm_player.gd" id="4_annk1"]
 [ext_resource type="AudioStream" uid="uid://cu38ydn1761vd" path="res://assets/04.ogg" id="4_gs5a3"]
 [ext_resource type="AudioStream" uid="uid://cl76b6dea1kke" path="res://assets/05.ogg" id="5_j6opp"]
+[ext_resource type="AudioStream" uid="uid://cbnyehpavfwyw" path="res://assets/01.wav" id="7_epqfv"]
+[ext_resource type="AudioStream" uid="uid://djdbes5jud2i4" path="res://assets/02.wav" id="8_17hm8"]
+[ext_resource type="AudioStream" uid="uid://dn5jw4kxvflko" path="res://assets/11.wav" id="9_myawf"]
+[ext_resource type="AudioStream" uid="uid://citvbj1r4heft" path="res://assets/12.wav" id="10_8cg8y"]
+[ext_resource type="AudioStream" uid="uid://b0c85x0o3w73f" path="res://assets/03.wav" id="11_07j2k"]
+[ext_resource type="AudioStream" uid="uid://dt2r5bulnjmbo" path="res://assets/04.wav" id="12_niy2q"]
+[ext_resource type="AudioStream" uid="uid://d042xpfr3mlah" path="res://assets/05.wav" id="13_jgvv4"]
+[ext_resource type="AudioStream" uid="uid://qo5t8pdt1tdt" path="res://assets/06.wav" id="14_3nxj7"]
+[ext_resource type="AudioStream" uid="uid://bapyae3wl1bkl" path="res://assets/07.wav" id="15_ff7p6"]
+[ext_resource type="AudioStream" uid="uid://c65qc8pwrj26l" path="res://assets/08.wav" id="16_ajiub"]
+[ext_resource type="AudioStream" uid="uid://bj706fgwjer0m" path="res://assets/09.wav" id="17_s3van"]
+[ext_resource type="AudioStream" uid="uid://4fh3nyxxk13c" path="res://assets/10.wav" id="18_rxqid"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_nm08u"]
 clip_count = 5
@@ -34,7 +46,37 @@ Vector2i(-1, -1): {
 }
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tmk07"]
+streams_count = 12
+stream_0/stream = ExtResource("7_epqfv")
+stream_1/stream = ExtResource("8_17hm8")
+stream_1/weight = 2.0
+stream_2/stream = ExtResource("11_07j2k")
+stream_2/weight = 4.0
+stream_3/stream = ExtResource("12_niy2q")
+stream_3/weight = 5.0
+stream_4/stream = ExtResource("13_jgvv4")
+stream_4/weight = 6.0
+stream_5/stream = ExtResource("14_3nxj7")
+stream_5/weight = 7.0
+stream_6/stream = ExtResource("15_ff7p6")
+stream_6/weight = 7.0
+stream_7/stream = ExtResource("16_ajiub")
+stream_7/weight = 6.0
+stream_8/stream = ExtResource("17_s3van")
+stream_8/weight = 5.0
+stream_9/stream = ExtResource("18_rxqid")
+stream_9/weight = 4.0
+stream_10/stream = ExtResource("9_myawf")
+stream_10/weight = 2.0
+stream_11/stream = ExtResource("10_8cg8y")
+
 [node name="BgmPlayer" type="AudioStreamPlayer"]
 stream = SubResource("AudioStreamInteractive_nm08u")
 autoplay = true
 script = ExtResource("4_annk1")
+
+[node name="JumpPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_tmk07")
+volume_db = -8.32
+max_polyphony = 5

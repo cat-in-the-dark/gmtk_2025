@@ -47,12 +47,14 @@ func collect_note():
 
 func disable_player():
 	$AnimationPlayer.play("damaged")
-	$DamageHitArea.set_process(false)
+	$DamageHitArea/CollisionShape2D.set_deferred('disabled', true)
+	$CollisionShape2D.set_deferred('disabled', true)
 	started = false
 	
 func restore_player():
 	$AnimationPlayer.stop()
-	$DamageHitArea.set_process(true)
+	$DamageHitArea/CollisionShape2D.set_deferred('disabled', false)
+	$CollisionShape2D.set_deferred('disabled', false)
 	velocity.x = 0
 	velocity.y = 0
 	started = true

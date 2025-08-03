@@ -8,7 +8,6 @@ const CIRCLE_LEN = PI * 16
 var started = false
 
 @onready var sprite = $Sprite2D
-@export var room: Room
 
 func _physics_process(delta):
 	if not started:
@@ -59,10 +58,13 @@ func restore_player():
 	started = true
 	
 
-func _on_damage_hit_area_body_entered(_body: Node2D):
+func _on_damage_hit_area_body_entered(body: Node2D):
 	# Collide with spike
-	print('UPS')
-	disable_player()
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, 'global_position', room.player_spawn_point.global_position, 0.5)
-	tween.tween_callback(restore_player)
+	var room = body.get_parent()
+	if room is Room:
+		disable_player()
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, 'global_position', room.player_spawn_point.global_position, 0.5)
+		tween.tween_callback(restore_player)
+	else:
+		print("WTF!!!")

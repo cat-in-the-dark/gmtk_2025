@@ -7,7 +7,6 @@ const TILEMAP_CELL_SIZE = 8
 var level_size = 0
 
 @export var player_spawn_point: Node2D
-@export var player: Player
 @export var next_level_prefab: PackedScene
 @export var n_notes: int
 var n_collected_notes: int = 0
@@ -50,8 +49,6 @@ func spawn_next_room():
 	var next_level = next_level_prefab.instantiate()
 	next_level.global_position = trans_tiles.global_position
 	next_level.global_position.x += trans_tiles.get_used_rect().size.x * TILEMAP_CELL_SIZE
-	next_level.player = player
-	player.room = next_level
 	get_tree().root.add_child(next_level)
 	
 func show_win_screen():

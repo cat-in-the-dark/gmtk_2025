@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://d0xedyqr3ctsm" path="res://assets/background1.png" id="2_207d3"]
 
 [node name="Background" type="Node2D"]
+z_index = -1
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 repeat_size = Vector2(320, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-z_index = -1
 texture = ExtResource("1_575id")
 centered = false
 

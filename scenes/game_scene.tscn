@@ -17,7 +17,7 @@ position = Vector2(10, -48)
 room = NodePath("../Room")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(110, 0)
+position = Vector2(110, -42)
 position_smoothing_speed = 8.0
 
 [node name="RightEdge" type="Area2D" parent="Player/Camera2D"]

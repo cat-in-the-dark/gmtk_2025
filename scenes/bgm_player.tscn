@@ -86,7 +86,7 @@ max_polyphony = 5
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_8cg8y")
-volume_db = -15.359
+volume_db = -27.0
 max_polyphony = 4
 
 [node name="Hit" type="AudioStreamPlayer" parent="."]
@@ -96,5 +96,5 @@ max_polyphony = 4
 
 [node name="Fall" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_niy2q")
-volume_db = -5.311
+volume_db = -12.0
 max_polyphony = 4

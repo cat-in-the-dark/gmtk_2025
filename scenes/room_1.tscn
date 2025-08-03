@@ -18,7 +18,7 @@ tile_map_data = PackedByteArray("AAABAPz/AAABAAAAAAACAPz/AAABAAAAAAADAPz/AAABAAA
 tile_set = ExtResource("1_3t5sg")
 
 [node name="player_spawn_point" type="Node2D" parent="Tiles1"]
-position = Vector2(22, -55)
+position = Vector2(50, -50)
 
 [node name="Note" parent="Tiles1" node_paths=PackedStringArray("room") instance=ExtResource("2_vu5en")]
 position = Vector2(448, -84)
@@ -41,19 +41,19 @@ position = Vector2(702, -85)
 room = NodePath("../..")
 
 [node name="Label2" type="Label" parent="Tiles1"]
-offset_left = 194.0
-offset_top = -120.0
-offset_right = 306.0
-offset_bottom = -99.0
+offset_left = 229.0
+offset_top = -101.0
+offset_right = 341.0
+offset_bottom = -80.0
 text = "SPACE 
 to jump"
 label_settings = ExtResource("4_irjyx")
 
 [node name="space_to_start" type="Label" parent="Tiles1"]
-offset_left = 9.0
-offset_top = -97.0
-offset_right = 113.0
-offset_bottom = -76.0
+offset_left = 21.0
+offset_top = -96.0
+offset_right = 125.0
+offset_bottom = -75.0
 text = "SPACE
 to start"
 label_settings = ExtResource("4_irjyx")

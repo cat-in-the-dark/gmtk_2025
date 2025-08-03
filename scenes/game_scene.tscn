@@ -17,7 +17,7 @@ size = Vector2(1024, 319)
 script = ExtResource("1_rurhu")
 
 [node name="Player" parent="." instance=ExtResource("1_mlf6e")]
-position = Vector2(10, -45)
+position = Vector2(50, -45)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(110, -26)
@@ -45,7 +45,6 @@ shape = SubResource("WorldBoundaryShape2D_po0ka")
 [node name="Room" parent="." instance=ExtResource("2_po0ka")]
 
 [node name="Background" parent="." instance=ExtResource("5_y3j0m")]
-visible = false
 position = Vector2(0, -180)
 
 [node name="HUD" type="CanvasLayer" parent="."]

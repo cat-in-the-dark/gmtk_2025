@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnoyp7x73bs8s"]
+[gd_scene load_steps=3 format=3 uid="uid://dnoyp7x73bs8s"]
 
 [ext_resource type="Texture2D" uid="uid://10o0mee6p41m" path="res://assets/background0.png" id="1_575id"]
+[ext_resource type="Texture2D" uid="uid://d0xedyqr3ctsm" path="res://assets/background1.png" id="2_207d3"]
 
 [node name="Background" type="Node2D"]
 
@@ -10,4 +11,24 @@ repeat_size = Vector2(320, 0)
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 z_index = -1
 texture = ExtResource("1_575id")
+centered = false
+
+[node name="sky2" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(0, -100)
+texture = ExtResource("2_207d3")
+centered = false
+
+[node name="sky3" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(0, -200)
+texture = ExtResource("2_207d3")
+centered = false
+
+[node name="sky4" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(0, -300)
+texture = ExtResource("2_207d3")
+centered = false
+
+[node name="sky5" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(0, -400)
+texture = ExtResource("2_207d3")
 centered = false

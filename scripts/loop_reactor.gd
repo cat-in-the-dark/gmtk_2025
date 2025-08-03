@@ -1,7 +1,7 @@
 extends Label
 
-func destroy(n_loops):
+func destroy(_n_loops):
 	queue_free()
 
-func make_visible(n_loops):
+func make_visible(_n_loops):
 	visible = true

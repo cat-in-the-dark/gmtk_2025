@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bq1agxpbja1mi"]
+[gd_scene load_steps=8 format=3 uid="uid://bq1agxpbja1mi"]
 
 [ext_resource type="PackedScene" uid="uid://clknudq3r3qcn" path="res://scenes/player.tscn" id="1_mlf6e"]
 [ext_resource type="PackedScene" uid="uid://djog75ckri4ev" path="res://scenes/room_1.tscn" id="2_po0ka"]
 [ext_resource type="Script" uid="uid://bcht5gnqqkt3n" path="res://scripts/killzone.gd" id="3_v1wow"]
 [ext_resource type="PackedScene" uid="uid://de08ymgyhd2im" path="res://scenes/bgm_player.tscn" id="4_bw6k5"]
+[ext_resource type="PackedScene" uid="uid://dnoyp7x73bs8s" path="res://scenes/bg-parallax.tscn" id="5_y3j0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycayy"]
 size = Vector2(1024, 319)
@@ -38,5 +39,9 @@ shape = SubResource("WorldBoundaryShape2D_po0ka")
 [node name="BgmPlayer" parent="." instance=ExtResource("4_bw6k5")]
 
 [node name="Room" parent="." instance=ExtResource("2_po0ka")]
+
+[node name="Background" parent="." instance=ExtResource("5_y3j0m")]
+visible = false
+position = Vector2(0, -180)
 
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://de08ymgyhd2im"]
+[gd_scene load_steps=24 format=3 uid="uid://de08ymgyhd2im"]
 
 [ext_resource type="AudioStream" uid="uid://dvredh3vj2nit" path="res://assets/01.ogg" id="1_wk4np"]
 [ext_resource type="AudioStream" uid="uid://bit06fop6icd4" path="res://assets/02.ogg" id="2_tlpki"]
@@ -18,6 +18,9 @@
 [ext_resource type="AudioStream" uid="uid://c65qc8pwrj26l" path="res://assets/08.wav" id="16_ajiub"]
 [ext_resource type="AudioStream" uid="uid://bj706fgwjer0m" path="res://assets/09.wav" id="17_s3van"]
 [ext_resource type="AudioStream" uid="uid://4fh3nyxxk13c" path="res://assets/10.wav" id="18_rxqid"]
+[ext_resource type="AudioStream" uid="uid://by1u6s3l2p53y" path="res://assets/jump.wav" id="19_8cg8y"]
+[ext_resource type="AudioStream" uid="uid://cgbytw4uj64v6" path="res://assets/hit.wav" id="20_07j2k"]
+[ext_resource type="AudioStream" uid="uid://y20w37ty6mkl" path="res://assets/fall.wav" id="21_niy2q"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_nm08u"]
 clip_count = 5
@@ -80,3 +83,15 @@ script = ExtResource("4_annk1")
 stream = SubResource("AudioStreamRandomizer_tmk07")
 volume_db = -8.32
 max_polyphony = 5
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_8cg8y")
+max_polyphony = 4
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_07j2k")
+max_polyphony = 4
+
+[node name="Fall" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_niy2q")
+max_polyphony = 4

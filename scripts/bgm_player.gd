@@ -10,6 +10,17 @@ func _ready() -> void:
 	clip_count = s.clip_count
 
 
+
+func jump():
+	$Jump.play()
+
+func fall():
+	$Fall.play()
+
+func hit():
+	$Hit.play()
+
+
 func _decide_track() -> int:
 	return target_track;
 

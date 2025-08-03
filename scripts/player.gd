@@ -6,8 +6,10 @@ const JUMP_VELOCITY = -300.0
 const CIRCLE_LEN = PI * 16
 
 var started = false
+var was_on_floor = false
 
 @onready var sprite = $Sprite2D
+@onready var bgm_player = get_node("/root/game_scene/BgmPlayer") as BgmPlayer
 
 func _physics_process(delta):
 	if not started:
@@ -22,6 +24,7 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		bgm_player.jump()
 	if Input.is_action_just_released("ui_accept") and velocity.y < 0:
 		velocity.y = 0
 
@@ -37,6 +40,11 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+	var on_floor = is_on_floor()
+	if (!was_on_floor and on_floor):
+		bgm_player.fall()
+	was_on_floor = on_floor
+
 	# Animate sprite
 	var vx = get_position_delta().x
 	sprite.rotate(vx / 16.0)
@@ -48,6 +56,7 @@ func collect_note():
 func disable_player():
 	Globals.n_restarts += 1
 	$AnimationPlayer.play("damaged")
+	bgm_player.hit()
 	$DamageHitArea/CollisionShape2D.set_deferred('disabled', true)
 	$CollisionShape2D.set_deferred('disabled', true)
 	started = false

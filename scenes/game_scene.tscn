@@ -28,7 +28,7 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_ycayy")
 
 [node name="Killzone" type="Area2D" parent="."]
-position = Vector2(0, 136)
+position = Vector2(0, -24)
 script = ExtResource("3_v1wow")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]

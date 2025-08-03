@@ -8,6 +8,9 @@ var level_size = 0
 @export var n_notes: int
 var n_collected_notes: int = 0
 
+signal level_looped(n_loops)
+var loops = 0
+
 # Parts contains 3 elements of the level so we can loop them 
 # until player gathers all Notes.
 # The last part must be always one without notes.
@@ -25,6 +28,11 @@ func collect_note():
 
 func is_notes_callected():
 	return n_collected_notes >= n_notes
+	
+func on_level_looped():
+	loops += 1
+	print("Level looped: ", loops)
+	level_looped.emit(loops)
 
 func move_transition_room():
 	if is_notes_callected():
@@ -49,6 +57,7 @@ func move_game_rooms():
 			call_deferred("spawn_next_room")
 		else:
 			call_deferred("show_win_screen")
-		return
-	for tile in game_tiles:
-		tile.position.x = tile.position.x + level_size
+	else:
+		on_level_looped()
+		for tile in game_tiles:
+			tile.position.x = tile.position.x + level_size

@@ -40,4 +40,3 @@ shape = SubResource("WorldBoundaryShape2D_po0ka")
 [node name="Room" parent="." instance=ExtResource("2_po0ka")]
 
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]
-[connection signal="note_collected" from="Room" to="BgmPlayer" method="_on_room_note_collected"]

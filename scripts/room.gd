@@ -1,8 +1,6 @@
 extends Node2D
 class_name Room
 
-signal note_collected(n_notes: int, n_collected_notes: int)
-
 const TILEMAP_CELL_SIZE = 8
 var level_size = 0
 
@@ -19,6 +17,7 @@ var loops = 0
 # The last part must be always one without notes.
 @onready var game_tiles: Array[TileMapLayer] = [$Tiles1, $Tiles2]
 @onready var trans_tiles: TileMapLayer = $Transition
+@onready var bgm_player = get_node("/root/game_scene/BgmPlayer") as BgmPlayer
 
 
 func _ready():
@@ -28,7 +27,7 @@ func _ready():
 
 func collect_note():
 	n_collected_notes += 1
-	note_collected.emit(n_notes, n_collected_notes)
+	bgm_player.on_room_note_collected(n_notes, n_collected_notes)
 
 func is_notes_callected():
 	return n_collected_notes >= n_notes
@@ -40,6 +39,7 @@ func on_level_looped():
 
 func move_transition_room():
 	if is_notes_callected():
+		bgm_player.on_room_note_collected(n_notes, 0)
 		queue_free()
 		return
 	trans_tiles.position.x = trans_tiles.position.x + level_size

@@ -26,6 +26,7 @@ func _ready():
 	level_size += trans_tiles.get_used_rect().size.x * TILEMAP_CELL_SIZE
 
 func collect_note():
+	Globals.n_notest += 1
 	n_collected_notes += 1
 	bgm_player.on_room_note_collected(n_notes, n_collected_notes)
 
@@ -33,6 +34,7 @@ func is_notes_callected():
 	return n_collected_notes >= n_notes
 	
 func on_level_looped():
+	Globals.n_restarts += 1
 	loops += 1
 	print("Level looped: ", loops)
 	level_looped.emit(loops)

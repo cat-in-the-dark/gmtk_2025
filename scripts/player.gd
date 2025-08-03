@@ -46,6 +46,7 @@ func collect_note():
 	print("Collect note")
 
 func disable_player():
+	Globals.n_restarts += 1
 	$AnimationPlayer.play("damaged")
 	$DamageHitArea/CollisionShape2D.set_deferred('disabled', true)
 	$CollisionShape2D.set_deferred('disabled', true)

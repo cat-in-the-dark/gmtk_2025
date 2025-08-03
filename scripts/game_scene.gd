@@ -6,6 +6,9 @@ class_name GameScene
 
 func _ready():
 	Globals.reset()
+	
+func restart_game():
+	get_tree().change_scene_to_file("res://scenes/game_scene.tscn")
 
 func _process(delta):
 	if Globals.n_notest == 0:
@@ -17,3 +20,6 @@ func _process(delta):
 		loops_counter.text = ""
 	else:
 		loops_counter.text = "LOOPS: %d" % Globals.n_restarts
+
+	if Input.is_action_just_pressed("restart"):
+		call_deferred('restart_game')
